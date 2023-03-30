@@ -1,4 +1,4 @@
-https://chakra-hub-mytube.netlify.app/
+Live link of the App - https://chakra-hub-mytube.netlify.app/
 
 # Getting Started with Create React App
 
