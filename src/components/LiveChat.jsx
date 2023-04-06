@@ -4,11 +4,20 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../utils/chatSlice";
 import { generate } from "../utils/helper";
 import { sentence } from "../utils/helper";
+import { useState } from "react";
 
 const LiveChat = () => {
+  const [liveChat, setLiveChat] = useState();
   const user_details = useSelector((store) => store.chat.message);
   const dispatch = useDispatch();
-
+  const handleLiveSubmit = () =>{
+    dispatch(
+      updateUser({
+        user: 'Chakradhar',
+        message: liveChat,
+      })
+    )
+  }
   useEffect(() => {
     const interval = setInterval(() => {
       dispatch(
@@ -32,6 +41,13 @@ const LiveChat = () => {
           );
         })}
       </div>
+      <form className="live_input" onSubmit={(e)=>{
+        e.preventDefault()
+        handleLiveSubmit()
+        setLiveChat('')}}>
+        <input type="text" className="live_input_field" value={liveChat} onChange={(e)=>setLiveChat(e.target.value)}/>
+        <button type="submit" className="live_send">Send</button>
+      </form>
     </>
   );
 };

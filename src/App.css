@@ -497,3 +497,32 @@
     background-color: blue;
     border-radius: 25px;
 }
+
+.live_input{
+margin-top: 10px;
+}
+
+.live_input_field{
+    height: 25px;
+    outline: 0;
+    width: 280px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 0 10px;
+}
+
+.live_send{
+    padding: 4.5px;
+    width: 50px;
+    margin-left: 10px;
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.live_send:hover{
+    background-color: red;
+    color: white;
+}
